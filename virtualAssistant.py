@@ -1,26 +1,38 @@
 import subprocess as sp
 import sys
+from io import BytesIO
+
 
 ##install modules##
 
-def CallWin() :  
+def CallWin() :
+    sp.call('curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py')
+    sp.call('python get-pip.py')
     sp.call('pip install gTTS')
     pyAudioFile = open('PyAudio-0.2.11-cp39-cp39-win_amd64.whl', 'r')
     sp.call('pip install '+pyAudioFile.name)
     sp.call('pip install SpeechRecognition')
     sp.call('pip install wikipedia')
 
+    
 
 
-#CallWin()
-
-
-## import modules ##
 
 from gtts import gTTS
 import pyaudio, wikipedia as wiki, os, datetime, calendar, warnings
 import speech_recognition as speech
-from io import BytesIO
+
+
+
+CallWin()
+
+
+
+## import modules ##
+
+
+
+
 
 warnings.filterwarnings('ignore')
 
@@ -46,5 +58,10 @@ def convertTTS():
     tts.save('convertedAudio.mp3')
     os.system('start convertedAudio.mp3')
 
+ #call test 
 
 convertTTS()
+
+def virtualAss():
+    return None
+
