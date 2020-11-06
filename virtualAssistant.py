@@ -24,7 +24,7 @@ import speech_recognition as speech
 
 
 
-CallWin()
+#CallWin()
 
 
 
@@ -46,6 +46,8 @@ def getAudioTT():
 
     # try catch I'll put it later
 
+
+
     return text
 
 #this is just a test function so .. & it works fine
@@ -54,7 +56,7 @@ def convertTTS():
     text = getAudioTT()
     print('you said : '+text)
     audioPlay = BytesIO()
-    tts = gTTS(text, lang='bn', slow=False)
+    tts = gTTS(text, lang='en', slow=False)
     tts.save('convertedAudio.mp3')
     os.system('start convertedAudio.mp3')
 
@@ -63,5 +65,8 @@ def convertTTS():
 convertTTS()
 
 def virtualAss():
+
+    
+
     return None
 
